@@ -50,6 +50,25 @@
             background: #ff0 url("./images/dog4.jpeg") center center/100% auto no-repeat fixed;
         }
 
+        .page { overflow: hidden; }
+        .page .vs {
+            width: 100%; height: auto; max-height: 100vh;              /* 이미지는 width와 height 중 하나는 무조건 auto */
+        }
+        .vs img {
+            display: block; width: 100%; height: auto;
+        }
+
+        #page5 .vs img { filter: blur(10px); }
+        #page6 .vs img { filter: brightness(50%); }                     /* 0% : 검은화면, 100% : 원본사진, 200% : 밝아진사진 */
+        #page7 .vs img { 
+            /* filter: contrast(50%);  */                               /* 안개 낀 느낌 */  
+            /* filter: grayscale(90%); */                               /* 무채톤으로 바꾸기 */
+            /* filter: invert(90%); */                                  /* 색상 반전 */
+            /* filter: hue-rotate(90deg); */                            /* 현재 사진의 90도 방향에 있는 색과 현재 사진을 연산하기 */
+            /* filter: saturate(20%); */                                /* 채도가 낮아짐 (오래된 사진처럼 보임) */
+            filter: sepia(60%);
+        }
+
     </style>
 </head>
 <body>
@@ -66,6 +85,22 @@
         </section>
         <section class="page" id="page4">
             <h2 class="page_tit"> 페이지제목4 </h2>
+        </section>
+        <section class="page" id="page5">
+            <h2 class="page_tit"> 페이지제목5 </h2>
+            <figure class="vs"><img src="./images/dog3.jpeg" alt="배너1"></figure>
+        </section>
+        <section class="page" id="page6">
+            <h2 class="page_tit"> 페이지제목6 </h2>
+            <figure class="vs"><img src="./images/dog3.jpeg" alt="배너2"></figure>
+        </section>
+        <section class="page" id="page7">
+            <h2 class="page_tit"> 페이지제목7 </h2>
+            <figure class="vs"><img src="./images/dog3.jpeg" alt="배너3"></figure>
+        </section>
+        <section class="page" id="page8">
+            <h2 class="page_tit"> 페이지제목8 </h2>
+            <figure class="vs"><img src="./images/dog3.jpeg" alt="배너4"></figure>
         </section>
     </div>
     <div id="con">
