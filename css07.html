@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> css 속성(properties) - 기타 속성 </title>
+    <style>
+        #canvas, #con {
+            width: 1280px;
+            margin: 60px auto;
+        }
+        .mouse { width: 1280px; clear: both; min-height: 100vh; }
+        .mouse:after { content: ""; clear: both; display: block; width: 100%; }
+        .mouse ul { list-style: none; clear: both; }
+        .mouse li { width: 100px; height: 100px; margin: 15px; border: 1px solid #333; float: left;}
+        .mouse li.alias { cursor: alias; }          /* 바로가기 */
+        .mouse li.all-scroll { cursor: all-scroll; }
+        .mouse li.auto { cursor: auto; }            /* 기본 모양 */
+        .mouse li.cell { cursor: cell; }
+        .mouse li.col-resize { cursor: col-resize; }
+        .mouse li.context-menu { cursor: context-menu; }    /* 기본 모양 */
+        .mouse li.copy { cursor: copy; }
+        .mouse li.crosshair { cursor: crosshair; }
+        .mouse li.default { cursor: default; }       /* 기본 모양 */
+
+        .mouse li.e-resize { cursor: e-resize; }
+        .mouse li.ew-resize { cursor: ew-resize; }
+        .mouse li.grab { cursor: grab; }
+        .mouse li.grabbing { cursor: grabbing; }
+        .mouse li.help { cursor: help; }
+        .mouse li.move { cursor: move; }
+        .mouse li.n-resize { cursor: n-resize; }
+        .mouse li.no-drop { cursor: no-drop; }
+        .mouse li.none { cursor: none; }            /* 커서 없어짐*/
+
+        .mouse li.not-allowed { cursor: not-allowed; }
+        .mouse li.pointer { cursor: pointer; }
+        .mouse li.progress { cursor: progress; }   /* 마우스 포인터와 로딩 다 출력 */
+        .mouse li.row-resize { cursor: row-resize; }
+        .mouse li.s-resize { cursor: s-resize; }
+        .mouse li.text { cursor: text; }
+        .mouse li.url { cursor: url("/images/cursor.png"), auto; }
+        .mouse li.w-resize { cursor: w-resize; }
+        .mouse li.wait { cursor: wait; }            /* 마우스 포인터는 없어지고 로딩만 */
+        
+        .mouse li.zoom-in { cursor: zoom-in; }
+        .mouse li.zoom-out { cursor: zoom-out; }
+        .mouse li.url2 { cursor: url("/images/click.png"), auto; }
+
+        .list li.disc { list-style-type: disc; }
+        .list li.circle { list-style-type: circle; }
+        .list li.square { list-style-type: square; }
+        .list li.circle { list-style-type: circle; }
+        .list li.none { list-style-type: none; }
+        .list li.decimal { list-style-type: decimal; }
+        .list li.decimal-leading-zero { list-style: decimal; }
+        .list li.armenian { list-style-type: armenian; }
+        .list li.georgian { list-style-type: georgian; }
+        .list li.hebrew { list-style-type: hebrew; }
+        .list li.hiragana { list-style-type: hiragana; }
+        .list li.hiragana-iroha { list-style-type: hiragana-iroha; }
+        .list li.katakana { list-style-type: katakana; }
+        .list li.katakana-iroha { list-style-type: katakana-iroha; }
+        .list li.lower-alpha { list-style-type: lower-alpha; }
+        .list li.lower-greek { list-style-type: lower-greek; }
+        .list li.lower-latin { list-style-type: lower-latin; }
+        .list li.lower-roman { list-style-type: lower-roman; }
+        .list li.upper-alpha { list-style-type: upper-alpha; }
+        .list li.upper-greek { list-style-type: upper-greek; }
+        .list li.upper-latin { list-style-type: upper-latin; }
+        .list li.upper-roman { list-style-type: upper-roman; }
+        .list li.cjk-ideographic { list-style-type: cjk-ideographic; }
+        .list li.url { list-style-image: url(/images/kitty.png); }
+        
+        .ts { clear: both; width: 100%; }
+        .tit-box { width: 900px; height: 100px; line-height: 100px; text-align: center; }
+        .tit-box h2 { font-size: 60px; color: deepskyblue; }
+
+        .ts-tit1 { text-shadow: 3px 3px #0c4569, -3px -3px #b4dffa; }
+        
+        .ts-tit2 { text-shadow: -3px -3px #0c4569, 3px 3px #b4dffa; }
+        
+        .tit-box:nth-child(3) { background-color: #fff; }
+        .tit-box h2.ts-tit3 { color: #000; text-shadow: 2px 2px 0px #eee, 4px 4px 0px #000; }
+        
+        .tit-box:nth-child(4) { background-color: #000; }
+        .tit-box h2.ts-tit4 { color: #fff; text-shadow: 0 0 1px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 60px #ff00de, 
+                                                0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 110px #ff00de; }       /* 네온처럼 만들기 */
+                                                
+        .tit-box h2.ts-tit5 { text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;  color: white; }
+
+        .tit-box:nth-child(6) { background: #565656; }
+        .tit-box h2.ts-tit6 { color: #333; text-shadow: 0 1px 0 #777, 0 -1px 0 #000; }
+
+        .tit-box:nth-child(7) { background-color: navy; }
+        .tit-box h2.ts-tit7 { font-family: 'Staatliches', cursive; color: #F1C164; text-shadow: 5px 5px #2D63A7; }
+        
+        .tit-box:nth-child(8) { background-color: navy; }
+        .tit-box h2.ts-tit8 { padding-top: 20px; font-family: 'Staatliches', cursive; color: F1C164; text-shadow: 5px 5px #2D63A7;
+                              text-decoration: overline; text-decoration-style: wavy; }
+        
+        .tit-box h2.ts-tit9 { text-shadow: 1px 1px 0px #0c4569, 2px 2px 0px #0c4569, 3px 3px 0px #0a3b5a,
+                4px 4px 0px #0a3b5a, 5px 5px 0px #072a40, 6px 6px 0px #072a40, 7px 7px 0px #03141e,
+                8px 8px 0px #03141e, 9px 9px 0px #010507, 10px 10px 0px #010507; }
+        
+        .tit-box h2.ts-tit10 {  }
+
+    </style>
+</head>
+<body>
+    <div id="canvas">
+        <article class="mouse">
+            <ul>
+                <li class="alias"> 모양1 </li>
+                <li class="all-scroll"> 모양2 </li>
+                <li class="auto"> 모양3 </li>
+                <li class="cell"> 모양4 </li>
+                <li class="col-resize"> 모양5 </li>
+                <li class="context-menu"> 모양6 </li>
+                <li class="copy"> 모양7 </li>
+                <li class="crosshair"> 모양8 </li>
+                <li class="default"> 모양9 </li>
+                <li class="e-resize"> 모양10 </li>
+                <li class="ew-resize"> 모양11 </li>
+                <li class="grab"> 모양12 </li>
+                <li class="grabbing"> 모양13 </li>
+                <li class="help"> 모양14 </li>
+                <li class="move"> 모양15 </li>
+                <li class="n-resize"> 모양16 </li>
+                <li class="no-drop"> 모양17 </li>
+                <li class="none"> 모양18 </li>
+                <li class="not-allowed"> 모양19 </li>
+                <li class="pointer"> 모양20 </li>
+                <li class="progress"> 모양21 </li>
+                <li class="row-resize"> 모양22 </li>
+                <li class="s-resize"> 모양23 </li>
+                <li class="text"> 모양24 </li>
+                <li class="url"> 모양25 </li>
+                <li class="w-resize"> 모양26 </li>
+                <li class="wait"> 모양27 </li>
+                <li class="zoom-in"> 모양28 </li>
+                <li class="zoom-out"> 모양29 </li>
+                <li class="url2"> 모양30 </li>
+            </ul>
+        </article>
+        <article class="list">
+            <ul>
+                <li class="disc"> 목록 기호1 <br>disc </li>
+                <li class="circle"> 목록 기호2 <br>circle </li>
+                <li class="square"> 목록 기호3 <br>square </li>
+                <li class="none"> 목록 기호4 <br>none </li>
+                <li class="decimal"> 목록 기호5 <br>decimal </li>
+                <li class="decimal-leading-zero"> 목록 기호6 <br>decimal-leading-zero</li>
+                <li class="armenian"> 목록 기호7 <br>armenian </li>
+                <li class="georgian"> 목록 기호8 <br>georgian </li>
+                <li class="hebrew"> 목록 기호9 <br>hebrew </li>
+                <li class="hiragana"> 목록 기호10-1 <br>hiragana </li>
+                <li class="hiragana-iroha"> 목록기호10-2 <br>hiragana-iroha</li>
+                <li class="katakana"> 목록 기호11-1 <br>katakana </li>
+                <li class="katakana-iroha"> 목록 기호11-2 <br>katakana-iroha </li>
+                <li class="lower-alpha"> 목록 기호12 <br>lower-alpha </li>
+                <li class="lower-greek"> 목록 기호13 <br>lower-greek </li>
+                <li class="lower-latin"> 목록 기호14 <br>lower-latin </li>
+                <li class="lower-roman"> 목록 기호15 <br>lower-roman </li>
+                <li class="upper-alpha"> 목록 기호16 <br>upper-alpha </li>
+                <li class="upper-greek"> 목록 기호17 <br>upper-greek </li>
+                <li class="upper-latin"> 목록 기호18 <br>upper-latin </li>
+                <li class="upper-roman"> 목록 기호19 <br>upper-roman </li>
+                <li class="cjk-ideographic"> 목록 기호20 <br>cjk-ideographic </li>
+                <li class="url"> 목록 기호21 <br>url</li>
+            </ul>
+        </article>
+
+        <div class="post">
+            <p>제1항의 해임건의는 국회재적의원 3분의 1 이상의 발의에 의하여 국회재적의원 과반수의 찬성이 있어야 한다. 행정각부의 설치·조직과 직무범위는 법률로 정한다. 국가는 사회보장·사회복지의 증진에 노력할 의무를 진다. 법률이 헌법에 위반되는 여부가 재판의 전제가 된 경우에는 법원은 헌법재판소에 제청하여 그 심판에 의하여 재판한다.</p>
+            <p>국가원로자문회의의 조직·직무범위 기타 필요한 사항은 법률로 정한다. 대통령은 헌법과 법률이 정하는 바에 의하여 공무원을 임면한다. 국무회의는 정부의 권한에 속하는 중요한 정책을 심의한다. 국군은 국가의 안전보장과 국토방위의 신성한 의무를 수행함을 사명으로 하며, 그 정치적 중립성은 준수된다.</p>
+            <p>군인은 현역을 면한 후가 아니면 국무위원으로 임명될 수 없다. 법원은 최고법원인 대법원과 각급법원으로 조직된다. 국무총리 또는 행정각부의 장은 소관사무에 관하여 법률이나 대통령령의 위임 또는 직권으로 총리령 또는 부령을 발할 수 있다. 이 헌법공포 당시의 국회의원의 임기는 제1항에 의한 국회의 최초의 집회일 전일까지로 한다.</p>
+            <p>헌법재판소 재판관은 탄핵 또는 금고 이상의 형의 선고에 의하지 아니하고는 파면되지 아니한다. 국방상 또는 국민경제상 긴절한 필요로 인하여 법률이 정하는 경우를 제외하고는, 사영기업을 국유 또는 공유로 이전하거나 그 경영을 통제 또는 관리할 수 없다. 탄핵소추의 의결을 받은 자는 탄핵심판이 있을 때까지 그 권한행사가 정지된다.</p>
+            <p>대통령은 헌법과 법률이 정하는 바에 의하여 국군을 통수한다. 공공필요에 의한 재산권의 수용·사용 또는 제한 및 그에 대한 보상은 법률로써 하되, 정당한 보상을 지급하여야 한다. 피고인의 자백이 고문·폭행·협박·구속의 부당한 장기화 또는 기망 기타의 방법에 의하여 자의로 진술된 것이 아니라고 인정될 때 또는 정식재판에 있어서 피고인의 자백이 그에게 불리한 유일한 증거일 때에는 이를 유죄의 증거로 삼거나 이를 이유로 처벌할 수 없다.</p>
+        </div>
+        <br><hr><br>
+
+        <article class="ts">
+            <div class="tit-box">
+                <h2 class="ts-tit1"> Lorem Ipsum </h2>
+            </div>
+            <div class="tit-box">
+                <h2 class="ts-tit2"> Lorem Ipsum </h2>
+            </div>
+            <div class="tit-box">
+                <h2 class="ts-tit3"> Lorem Ipsum </h2>
+            </div>
+            <div class="tit-box">
+                <h2 class="ts-tit4"> 집 보내줘 </h2>
+            </div>
+            <div class="tit-box">
+                <h2 class="ts-tit5"> Lorem Ipsum </h2>
+            </div>
+            <div class="tit-box">
+                <h2 class="ts-tit6"> Lorem Ipsum </h2>
+            </div>
+            <div class="tit-box">
+                <h2 class="ts-tit7"> Lorem Ipsum </h2>
+            </div>
+            <div class="tit-box">
+                <h2 class="ts-tit8"> Lorem Ipsum </h2>
+            </div>
+            <div class="tit-box">
+                <h2 class="ts-tit9"> Lorem Ipsum </h2>
+            </div>
+            <div class="tit-box">
+                <h2 class="ts-tit10"> Lorem Ipsum </h2>
+            </div>
+        </article>
+        <br><hr><br>
+
+        article.bs>div.
+    </div>
+
+    <div id="con">
+        <h1> 목록 속성 </h1>
+        <p> list-style : type position image </p>
+        <p> 메뉴나 목록의 기호를 표시하는 속성 </p>
+        <br><hr><br>
+
+        <h2> 목록 기호 </h2>
+        <p> list-style-type : disc | circle | square => ul <br>
+            none | decimal | armenian | georgian | hebrew | hiragana | katakana | lower-alpha | lower-greek | lower-latin | lower-roman | 
+                upper-alpha | upper-greek | upper-latin | upper-ramon | cjk-ideo => ol </p>
+        <p> li 요소에 표시되는 목록 기호로, 부모 요소가 ol인 경우는 숫자가 순서대로 앞에 표기되고, ul인 경우는 disc가 앞에 표기됨 </p>
+        <br><hr><br>
+
+        <h2> 목록 기호 위치 </h2>
+        <p> list-style-position : inside | outside </p>
+        <br><hr><br>
+
+        <h2> 목록 이미지 </h2>
+        <p> list-style-image : none | url(파일경로및이름) </p>
+        <p> 목록 기호에 들어갈 자리에 이미지가 표시되며, 파일경로나 이름은 ""(큰 따옴표), ''(작은 따옴표)로 묶을 수 있으며, 생략 가능 <br>
+            다만, 중간에 띄어쓰기나 한글 및 특수문자로 이루어져 있는 경우는 반드시 따옴표로 묶어야 함 </p>
+
+        <h1> 마우스 포인터 </h1>
+        <p> cursor : none | alias | all-scroll | auto | cell | col-size | context-menu | copy | crosshair | default | e-resize | n-resize | s-resize | w-resize | 
+            ew-resize | ne-resize | ns-resize | nwse-resize | se-resize | sw-resize | grab | grabbing | help | move | no-drop | not-allowed | pointer | progress | row-resize | 
+            zoom-in | zoom-out | text | url(파일경로및이름) </p>
+        <p> 해당 요소의 영역에 마우스 포인터가 위치되면, 그 마우스 포인터 모양을 지정할 수 있는 속성 </p>
+        <br><hr><br>
+
+        <h1> 그림자 속성 </h1>
+        <p> shadow : text-shadow | box-shadow </p>
+        <p> 텍스트나 박스의 외부 그림자 또는 내부 그림자를 말하며, 크기 속성에 포함되지 않아 아무리 많이 넣어도 팽창될 일이 없음 </p>
+
+        <h2> 텍스트 그림자 </h2>
+        <p> text-shadow : x-length y-length blur-length color </p>
+        <p> x를 양의 값으로 입력하면 그림자의 방향은 오른쪽에 발생되며, 음의 값으로 입력하면 그림자의 방향은 왼쪽에 발생됨 <br>
+            y를 양의 값으로 입력하면 그림자의 방향은 아래쪽에 발생되며, 음의 값으로 입력하면 그림자의 방향은 위쪽에 발생됨 <br>
+            x y blur color의 양을 여러 단계에 걸쳐 지정하면, 입체모양의 그림자가 표시됨 </p>
+        <p> text-shadow의 그림자의 양은 px 또는 pt 단위로 기재 </p>
+        <br><hr><br>
+
+        <h2> 박스 그림자 </h2>
+        <p> box-shadow : x-length y-length blur-length color </p>               <!-- 방법1 -->
+        <p> box-shadow : x-length y-length blur-length spread-length color </p>        <!-- 방법2 -->
+        <p> x를 양의 값으로 입력하면 그림자의 방향은 오른쪽에 발생되며, 음의 값으로 입력하면 그림자의 방향은 왼쪽에 발생됨 <br>
+            y를 양의 값으로 입력하면 그림자의 방향은 아래쪽에 발생되며, 음의 값으로 입력하면 그림자의 방향은 위쪽에 발생됨 <br>
+            x y blur color의 양을 여러 단계에 걸쳐 지정하면, 입체모양의 그림자가 표시됨 </p>
+        <p> box-shadow의 그림자의 양은 px 또는 pt 단위로 기재 </p>      
+    </div>
+</body>
+</html>
