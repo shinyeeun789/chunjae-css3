@@ -103,8 +103,37 @@
                 4px 4px 0px #0a3b5a, 5px 5px 0px #072a40, 6px 6px 0px #072a40, 7px 7px 0px #03141e,
                 8px 8px 0px #03141e, 9px 9px 0px #010507, 10px 10px 0px #010507; }
         
-        .tit-box h2.ts-tit10 {  }
+        .tit-box h2.ts-tit10 { text-shadow: none; transition: 0.6s; }
+        .tit-box h2.ts-tit10:hover { text-shadow: 1px 1px 0px #0c4569, 2px 2px 0px #0c4569, 3px 3px 0px #0a3b5a, 
+        4px 4px 0px #0a3b5a, 5px 5px 0px #072a40,
+        6px 6px 0px #072a40, 7px 7px 0px #03141e, 
+        8px 8px 0px #03141e, 9px 9px 0px #010507,
+        10px 10px 0px #010507; }
 
+        .bs { clear: both; }
+        .bs-box { width: auto; clear: both; padding: 40px; }
+        .bs-box span { display: block; width: 100px; height: 100px; line-height: 100px; text-align: center; }
+        .bs1 { background-color: deepskyblue; box-shadow: 10px 10px 0px #0c4569; }
+        .bs2 { background-color: deepskyblue; box-shadow: 10px 10px 10px #0c4569; }
+        .bs3 { background-color: deepskyblue; box-shadow: 1px 1px 0px #0c4569, 2px 2px 0px #0c4569,
+                3px 3px 0px #0a3b5a, 4px 4px 0px #0a3b5a, 5px 5px 0px #072a40, 6px 6px 0px #072a40, 7px 7px 0px #03141e,
+                8px 8px 0px #03141e, 9px 9px 0px #010507, 10px 10px 0px #010507; }
+        .bs4 { border-radius: 50%; background-color: deepskyblue;
+                box-shadow: 10px 10px 0px #0c4569; }
+        .bs5 { border-radius: 50px; background-color: deepskyblue; box-shadow: 10px 10px 10px #0c4569; }
+        .bs6 { border-radius: 50px; background-color: deepskyblue; box-shadow: 1px 1px 0px #0c4569, 2px 2px 0px #0c4569,
+                3px 3px 0px #0a3b5a, 4px 4px 0px #0a3b5a, 5px 5px 0px #072a40, 6px 6px 0px #072a40,
+                7px 7px 0px #03141e, 8px 8px 0px #03141e, 9px 9px 0px #010507, 10px 10px 0px #010507; }
+        #bs-box7 { height: 400px; background: #e2e2e2; background-image: linear-gradient(to bottom, #8a8a8a 25%, #9E9E9E 5%, #ffffff);
+                position: fixed; bottom: 0; left: 0; width: 100vw; display: flex; align-items: center; justify-content: center;
+                height: 100vh; margin: 0; padding: 0; }
+        .bs7 { --d: 200px; width: var(--d); height: var(--d); background: #eaeaea; position: absolute; border-radius: 50%; 
+                box-shadow: inset 30px -20px 60px 0 #5b5b5b; text-align: center; line-height: 200px; }
+        .bs7::before { content: ""; width: 0; height: 0; background: white; position: absolute; top: 30%; right: 30%;
+                border-radius: 50%; box-shadow: 0 0 30px 10px white; }
+        .bs7::after { content: ""; width: 240px; height: 100px; background: rgba(0, 0, 0, 0.7); position: absolute; 
+                bottom: -15%; right: 20%; border-radius: 50%; box-shadow: -2px 0 2px 0 rgba(0, 0, 0, 0.7); transform: rotateZ(10deg);
+                transform-origin: bottom right; z-index: -1; }
     </style>
 </head>
 <body>
@@ -214,7 +243,18 @@
         </article>
         <br><hr><br>
 
-        article.bs>div.
+        <article class="bs">
+            <div class="bs-box"><span class="bs1"> BOX1 </span></div>
+            <div class="bs-box"><span class="bs2"> BOX2 </span></div>
+            <div class="bs-box"><span class="bs3"> BOX3 </span></div>
+            <div class="bs-box"><span class="bs4"> BOX4 </span></div>
+            <div class="bs-box"><span class="bs5"> BOX5 </span></div>
+            <div class="bs-box"><span class="bs6"> BOX6 </span></div>
+            <div id="bs-box7"><span class="bs7" id="bs7"> BOX7 </span></div>
+            <div class="bs-box"><span class="bs8"> BOX8 </span></div>
+            <div class="bs-box"><span class="bs9"> BOX9 </span></div>
+            <div class="bs-box"><span class="bs10"> BOX10 </span></div>
+        </article>
     </div>
 
     <div id="con">
